@@ -1,0 +1,146 @@
+/* ===== APP LAYOUT ===== */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-attachment: fixed;
+}
+
+/* ===== MAIN WORKSPACE ===== */
+.main-workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ===== DOCUMENT WRAPPER ===== */
+.document-item {
+  background: transparent;
+  transition: all 0.3s ease;
+  font-family: 'Calibri', 'Segoe UI', sans-serif;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ===== ADD DOCUMENT BUTTON ===== */
+.add-document-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.add-document-btn {
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+}
+
+.add-document-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,107,107,0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .document-item {
+    flex: 0 0 calc(50% - 7.5px);
+    max-width: calc(50% - 7.5px);
+  }
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.logout-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.logout-container button {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 12px 24px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.logout-container button:hover {
+  background: linear-gradient(45deg, #ee5a52, #dc2626) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+  .main-workspace {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .document-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 280px;
+    min-height: 400px;
+  }
+  
+  .logout-container {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .logout-container button {
+    padding: 10px 20px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* ===== WORD-LIKE TOOLBAR ===== */
+.word-toolbar {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 11px;
+}
+
+.word-toolbar button {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 2px;
+}
+
+.word-toolbar button:hover {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+}
